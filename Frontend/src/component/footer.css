@@ -1,0 +1,11 @@
+.footer {
+    background-color: #333; /* Background color of the footer */
+    padding: 20px; /* Padding around the footer content */
+    text-align: center; /* Center align footer content */
+  }
+  
+ img {
+    width: 100px; /* Adjust the width of the image */
+    height: auto; /* Maintain aspect ratio */
+    margin-left: 30px;
+  }
