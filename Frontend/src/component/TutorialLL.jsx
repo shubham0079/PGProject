@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import './test.css';
 import VideoPlayer from './videoll';
+import Footer from './footer';
 
 const TutorialLL = () => {
   return (
@@ -25,7 +26,7 @@ const TutorialLL = () => {
     </main>
 
     <footer>
-        &copy; 2024 Your Web Page
+       <Footer></Footer>
     </footer>
     </div>
   );

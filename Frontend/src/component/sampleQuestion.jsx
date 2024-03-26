@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import './test.css';
-
+import Footer from './footer';
 
 const SampleQuestion = () => {
   return (
@@ -30,7 +30,7 @@ const SampleQuestion = () => {
     </main>
 
     <footer>
-        &copy; 2024 Your Web Page
+       <Footer></Footer>
     </footer>
     </div>
   );

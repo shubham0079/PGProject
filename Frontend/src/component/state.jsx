@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import './test.css';
-import Footer from './footer';
 import Header from './header';
+import Footer from './footer';
+
 
 const State = () => {
   const [selectedState, setSelectedState] = useState('');
@@ -23,7 +24,7 @@ const State = () => {
     <div id="body">
    <Header></Header>
         <main>
-        <img className='i1' src="/bannerpic.jpg" alt="Image Description" />
+        <img className='i1' src="/photo/bannerpic.jpg" alt="Image Description" />
         <p>Online services in this portal are available only for the States listed below</p>
           <p>Please select the State from where the service is to be taken</p>
 
@@ -44,11 +45,7 @@ const State = () => {
     </main>
 
     <footer>
-        <Footer></Footer>
-        
-
-
-        
+        <Footer></Footer>  
     </footer>
     </div>
   );

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import './test.css';
+import Footer from './footer';
 
 const InstructionSchool = () => {
   return (
@@ -29,7 +30,7 @@ const InstructionSchool = () => {
     </main>
 
     <footer>
-        &copy; 2024 Your Web Page
+       <Footer></Footer>
     </footer>
     </div>
   );

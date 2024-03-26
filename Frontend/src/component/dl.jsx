@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Footer from './footer';
 import { Link } from "react-router-dom";
 import Navbar from './navigationbar';
 // import './home.css';
@@ -35,7 +35,7 @@ const DL = () => {
     </main>
 
     <footer>
-        &copy; 2024 Your Web Page
+       <Footer></Footer>
     </footer>
     </div>
   );

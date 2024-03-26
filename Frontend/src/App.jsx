@@ -25,6 +25,19 @@ import PdfViewer from './component/LLTest'
 import DL from './component/dl'
 import Footer from './component/footer'
 import Header from './component/header'
+import MotorVehiclesAct from './component/MoterVA'
+import Mva1 from './component/mva1'
+import Mva2 from './component/mva2'
+import Mva3 from './component/mva3'
+import DashBoard from './component/Dashboard'
+import Rsc from './component/Rsc'
+import Rsc1 from './component/Rsc1'
+import Rsc2 from './component/Rsc2'
+import Rsc3 from './component/Rsc3'
+import Rsc4 from './component/Rsc4'
+import RoadSafetyvideo from './component/RoadSafetyvideo'
+import RoadSafetyvideo1 from './component/RoadSafetyvideo1'
+import FileUpload from './component/FileUpload'
 
 
 
@@ -56,9 +69,19 @@ function App() {
       <Route path='/dl' element={<DL></DL>}></Route>
       <Route path='/footer' element={<Footer></Footer>}></Route>
       <Route path='/header' element={<Header></Header>}></Route>
-
-  
-      
+      <Route path='/moterva' element={<MotorVehiclesAct></MotorVehiclesAct>}></Route>
+      <Route path='/mva1' element={<Mva1></Mva1>}></Route>
+      <Route path='/mva2' element={<Mva2></Mva2>}></Route>
+      <Route path='/mva3' element={<Mva3></Mva3>}></Route>
+      <Route path='/dashboard' element={<DashBoard></DashBoard>}></Route>
+      <Route path='/rsc' element={<Rsc></Rsc>}></Route>
+      <Route path='/rsc1' element={<Rsc1></Rsc1>}></Route>
+      <Route path='/rsc2' element={<Rsc2></Rsc2>}></Route>
+      <Route path='/rsc3' element={<Rsc3></Rsc3>}></Route>
+      <Route path='/rsc4' element={<Rsc4></Rsc4>}></Route>
+      <Route path='/rsvideo' element={<RoadSafetyvideo></RoadSafetyvideo>}></Route>
+      <Route path='/rsvideo1' element={<RoadSafetyvideo1></RoadSafetyvideo1>}></Route>
+      <Route path='/fileupload' element={<FileUpload></FileUpload>}></Route>
       
     </Routes>
     </BrowserRouter>

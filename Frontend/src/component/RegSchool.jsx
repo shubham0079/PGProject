@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import axios from 'axios'
 import { useNavigate } from "react-router-dom";
 import './test.css';
+import Footer from './footer';
 
 const RegSchool = () => {
     const [states,setStates ] = useState()
@@ -147,7 +148,7 @@ const RegSchool = () => {
       </main>
 
     <footer>
-        &copy; 2024 Your Web Page
+       <Footer></Footer>
     </footer>
     </div>
     

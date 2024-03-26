@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import './test.css';
+import Footer from './footer';
 
 const FindDoctor = () => {
   return (
@@ -24,7 +25,7 @@ const FindDoctor = () => {
     </main>
 
     <footer>
-        &copy; 2024 Your Web Page
+       <Footer></Footer>
     </footer>
     </div>
   );

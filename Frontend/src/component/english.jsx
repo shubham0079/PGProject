@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import './test.css';
+import Footer from './footer';
 
-const Marathi = () => {
+const English = () => {
   return (
     <div id="body">
 <header>
@@ -24,10 +25,10 @@ const Marathi = () => {
     </main>
 
     <footer>
-        &copy; 2024 Your Web Page
+       <Footer></Footer>
     </footer>
     </div>
   );
 };
 
-export default Marathi;
+export default English;

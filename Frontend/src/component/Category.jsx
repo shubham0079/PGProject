@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import './test.css';
+import Footer from './footer';
 
 const Category = () => {
     const [selectedState, setSelectedState] = useState('');
@@ -39,7 +40,7 @@ const Category = () => {
     </main>
 
     <footer>
-        &copy; 2024 Your Web Page
+        <Footer></Footer>
     </footer>
     </div>
   );

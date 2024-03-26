@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from './component/navigationbar';
 import './home.css';
 import Footer from './component/footer';
+import RoadSafetyvideo from './component/RoadSafetyvideo';
 
 const Home = () => {
   return (
@@ -13,7 +14,7 @@ const Home = () => {
     <h2>MOTOR VEHICLES DEPARTMENT, GOVERNMENT OF MAHARASHTRA</h2>
 <Navbar></Navbar>
     <main>
-        <p>This is a simple web page.</p>
+        <p><RoadSafetyvideo></RoadSafetyvideo></p>
         
        
     </main>
