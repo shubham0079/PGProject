@@ -38,6 +38,10 @@ import Rsc4 from './component/Rsc4'
 import RoadSafetyvideo from './component/RoadSafetyvideo'
 import RoadSafetyvideo1 from './component/RoadSafetyvideo1'
 import FileUpload from './component/FileUpload'
+import CheckboxLL from './component/llcheckbox'
+import Acknowledgement from './component/acknowledgement'
+import PhotoSign from './component/photo-sign'
+import SlotBooking from './component/llslot'
 
 
 
@@ -81,8 +85,13 @@ function App() {
       <Route path='/rsc4' element={<Rsc4></Rsc4>}></Route>
       <Route path='/rsvideo' element={<RoadSafetyvideo></RoadSafetyvideo>}></Route>
       <Route path='/rsvideo1' element={<RoadSafetyvideo1></RoadSafetyvideo1>}></Route>
-      <Route path='/fileupload' element={<FileUpload></FileUpload>}></Route>
-      
+      <Route path='/checkboxll' element={<CheckboxLL></CheckboxLL>}></Route>
+      <Route path='/acknowledgement' element={<Acknowledgement></Acknowledgement>}></Route>
+      <Route path='/photosign' element={<PhotoSign></PhotoSign>}></Route>
+      <Route path='/docupload' element={<FileUpload></FileUpload>}></Route>
+      <Route path='/llslot' element={<SlotBooking></SlotBooking>}></Route>
+
+
     </Routes>
     </BrowserRouter>
     

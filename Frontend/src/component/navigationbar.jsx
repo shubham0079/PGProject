@@ -12,6 +12,7 @@ const Navbar = () => {
         <li className="nav-item"><a href="/finddoctor">Find Doctor</a></li>
         <li className="nav-item"><a href="/rsc">Road Safety Content</a></li>
         <li className="nav-item"><a href="/moterva">MOTOR VEHICLES ACT </a></li>
+        <li className="nav-item"><a href="/dashboard">DashBoard</a></li>
       </ul>
     </nav>
   );

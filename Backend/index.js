@@ -6,12 +6,13 @@ const InfoModel =require("./models/info")
 
 const moment = require('moment');
 const RegModel = require("./models/regdoctor")
+const Checkbox = require("./models/saveCheckbox")
 
 const app = express()
 app.use(express.json())
 app.use(cors())
 
-mongoose.connect("mongodb://127.0.0.1:27017/users");
+mongoose.connect("mongodb://127.0.0.1:27017/users", { useNewUrlParser: true, useUnifiedTopology: true });
 
 app.post("/login",(req, res) =>{
     const {phone, password}= req.body;
@@ -61,3 +62,16 @@ app.post('/regdoctor',(req, res) =>{
 app.listen(3003,() =>{
     console.log("Server is running")
 })
+
+app.post('/saveCheckbox',(req, res) =>{
+    Checkbox.create(req.body)
+    .then( checkboxes=> res.json(checkboxes))
+    .catch(err => res.json(err))
+
+})
+
+  
+  app.listen(3000, () => {
+    console.log(`Server is running on port `);
+  });
+  

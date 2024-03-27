@@ -3,7 +3,7 @@ import axios from 'axios';
 import Footer from './footer';
 import { Link } from "react-router-dom";
 
-function FileUpload() {
+function PhotoSign() {
   const [selectedFile, setSelectedFile] = useState(null);
 
   const handleFileChange = (event) => {
@@ -28,36 +28,31 @@ function FileUpload() {
   };
 
   return (
-    <div id="body">
+        <div id="body">
 <header>
         <h1>Parivahan Mitra</h1>
 
     </header>
     <main>
-      <h2>Proof Of Residence</h2>
+      <h2>Upload Photo</h2>
       <input type="file" onChange={handleFileChange} />
       <button onClick={handleSubmit}>Upload</button>
 
-      <h2>Proof of Citizenship</h2>
-      <input type="file" onChange={handleFileChange} />
-      <button onClick={handleSubmit}>Upload</button>
-
-      <h2>Proof of Age</h2>
+      <h2>Upload  Signature</h2>
       <input type="file" onChange={handleFileChange} />
       <button onClick={handleSubmit}>Upload</button><br />
-      
-      <Link to="/photosign"  >
+
+      <Link to="/docupload"  >
     Next
     </Link>
-    
-   
-    </main>
+
+      </main>
 
     <footer>
-        <Footer></Footer>
+       <Footer></Footer>
     </footer>
     </div>
   );
 }
 
-export default FileUpload;
+export default PhotoSign;

@@ -14,7 +14,9 @@ const InfosSchema =new mongoose.Schema({
     birthDate: String,
     birthPlace: String,
     currentAddress: String,
-    permanentAddress: String
+    permanentAddress: String,
+    gender: String,
+    interests: [String]
 }) 
 
 const InfoModel = mongoose.model("infoo",InfosSchema)

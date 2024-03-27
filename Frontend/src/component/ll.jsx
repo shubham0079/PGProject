@@ -31,7 +31,8 @@ const LL = () => {
 
     <Link to="/Login" className="btn btn-default border w-100 bg-light rounded-0 text-decoration-none">
         Print LL (Form 3)
-    </Link>
+    </Link><br /><br />
+    <img src="/photo/image-296.png" alt="Image Description" />
     </main>
 
     <footer>
