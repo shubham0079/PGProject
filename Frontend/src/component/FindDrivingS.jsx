@@ -2,26 +2,24 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import './test.css';
 import Footer from './footer';
+import Header from './header';
 
 const FindDrivingS = () => {
   return (
     <div id="body">
-<header>
-        <h1>Parivahan Mitra</h1>
-
-    </header>
+      <Header></Header>
     <main>
     <section class="content">
+      <h2>Driving School</h2>
     </section>
     <Link to="/instrctionschool" >
-    Registor
-    </Link>
-
-    <Link to="/home"  >
-    Home
-    </Link>
+    <button>Registor</button>      </Link>
     
-   
+    <Link to="/home"  >
+    <button>Home</button> 
+    </Link><br /><br />
+
+    <img className='llimg' src="/photo/driving-schoo.avif" alt="Image Description" />
     </main>
 
     <footer>

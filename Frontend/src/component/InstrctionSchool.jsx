@@ -2,14 +2,12 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import './test.css';
 import Footer from './footer';
+import Header from './header';
 
 const InstructionSchool = () => {
   return (
     <div id="body">
-<header>
-        <h1>Parivahan Mitra</h1>
-
-    </header>
+      <Header></Header>
     <main>
     <section class="content">
     <h2>Instructions for Application Submission</h2>
@@ -19,13 +17,12 @@ const InstructionSchool = () => {
     <p>3. Upload Photo and Signature if required (applicable only in certain states)</p>
     </section>
     <Link to="/regschool" >
-    Continue
+    <button>Continue</button>
     </Link>
 
     <Link to="/home"  >
-    Home
-    </Link>
-    
+    <button>Home</button> 
+    </Link>    
    
     </main>
 

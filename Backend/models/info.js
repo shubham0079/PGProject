@@ -13,9 +13,12 @@ const InfosSchema =new mongoose.Schema({
     gender: String,
     birthDate: String,
     birthPlace: String,
-    currentAddress: String,
-    permanentAddress: String,
-    gender: String,
+    village: String,
+    address: String,
+    aadharNumber: String,
+    qualification: String,
+    bloodGroup: String,
+    duration: String,
     interests: [String]
 }) 
 

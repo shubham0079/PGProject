@@ -16,6 +16,6 @@ const regdocSchema =new mongoose.Schema({
     nationality: String
 }) 
 
-const RegModel = mongoose.model("regdoctors",regdocSchema)
+const Doctor = mongoose.model("regdoctors",regdocSchema)
 
-module.exports = RegModel
+module.exports = Doctor

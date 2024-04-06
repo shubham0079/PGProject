@@ -2,30 +2,24 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import './test.css';
 import Footer from './footer';
+import Header from './header';
 
 const SampleQuestion = () => {
   return (
     <div id="body">
-<header>
-        <h1>Parivahan Mitra</h1>
-
-    </header>
+      <Header></Header>
     <main>
     <section class="content">
     
       </section>
     <Link to="/marathi" >
-    Marathi
-    </Link>
+    <button>Marathi</button>                  </Link>
 
     <Link to="/english" >
-    English
-    </Link>
+    <button>English</button>                       </Link>
 
     <Link to="/home"  >
-    Home
-    </Link>
-    
+    <button>Home</button>                      </Link>    
    
     </main>
 

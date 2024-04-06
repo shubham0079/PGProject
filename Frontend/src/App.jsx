@@ -5,7 +5,6 @@ import Signup from './Signup'
 import Login from './Login'
 import Home from './home'
 import State from './component/state'
-import DateTime from './component/date'
 import LL from './component/ll'
 import Instruction from './component/instruction'
 import Category from './component/Category'
@@ -42,6 +41,20 @@ import CheckboxLL from './component/llcheckbox'
 import Acknowledgement from './component/acknowledgement'
 import PhotoSign from './component/photo-sign'
 import SlotBooking from './component/llslot'
+import FAQ from './component/FAQ'
+import FAQ1 from './component/FAQ1'
+import FAQ2 from './component/FAQ2'
+import FAQ3 from './component/FAQ3'
+import FAQ4 from './component/FAQ4'
+import Form3 from './component/form3'
+import Contactus from './component/contactus'
+import Feedback from './component/Feedback'
+import InstructionDL from './component/instructionDL'
+import DLDetails from './component/dldetails'
+import DLInfo from './component/dlInfo'
+import TutorialDL from './component/TutorialDL'
+import Quiz from './component/quiz'
+
 
 
 
@@ -90,6 +103,20 @@ function App() {
       <Route path='/photosign' element={<PhotoSign></PhotoSign>}></Route>
       <Route path='/docupload' element={<FileUpload></FileUpload>}></Route>
       <Route path='/llslot' element={<SlotBooking></SlotBooking>}></Route>
+      <Route path='/FAQ' element={<FAQ></FAQ>}></Route>
+      <Route path='/FAQ1' element={<FAQ1></FAQ1>}></Route>
+      <Route path='/FAQ2' element={<FAQ2></FAQ2>}></Route>
+      <Route path='/FAQ3' element={<FAQ3></FAQ3>}></Route>
+      <Route path='/FAQ4' element={<FAQ4></FAQ4>}></Route>
+      <Route path='/Form3' element={<Form3></Form3>}></Route>
+      <Route path='/contactus' element={<Contactus></Contactus>}></Route>
+      <Route path='/feedback' element={<Feedback></Feedback>}></Route>
+      <Route path='/instructiondl' element={<InstructionDL></InstructionDL>}></Route>
+      <Route path='/dldetails' element={<DLDetails></DLDetails>}></Route>
+      <Route path='/dlinfo' element={<DLInfo></DLInfo>}></Route>
+      <Route path='/tutorialdl' element={<TutorialDL></TutorialDL>}></Route>
+      <Route path='/quiz' element={<Quiz></Quiz>}></Route>
+      
 
 
     </Routes>

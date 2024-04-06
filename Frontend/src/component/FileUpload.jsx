@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import Footer from './footer';
 import { Link } from "react-router-dom";
+import Header from './header';
 
 function FileUpload() {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -29,10 +30,7 @@ function FileUpload() {
 
   return (
     <div id="body">
-<header>
-        <h1>Parivahan Mitra</h1>
-
-    </header>
+      <Header></Header>
     <main>
       <h2>Proof Of Residence</h2>
       <input type="file" onChange={handleFileChange} />
@@ -46,8 +44,8 @@ function FileUpload() {
       <input type="file" onChange={handleFileChange} />
       <button onClick={handleSubmit}>Upload</button><br />
       
-      <Link to="/photosign"  >
-    Next
+      <Link to="/home"  >
+      <button>Next</button>
     </Link>
     
    

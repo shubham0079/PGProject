@@ -3,14 +3,12 @@ import { Link } from "react-router-dom";
 import './test.css';
 import VideoPlayer from './videoll';
 import Footer from './footer';
+import Header from './header';
 
 const TutorialLL = () => {
   return (
     <div id="body">
-<header>
-        <h1>Parivahan Mitra</h1>
-
-    </header>
+      <Header></Header>
     <main>
     <section class="content">
     <h2>Tutorial for Learner Licence Test</h2>
@@ -19,9 +17,8 @@ const TutorialLL = () => {
    <VideoPlayer></VideoPlayer>
 
     <Link to="/home"  >
-    Home
-    </Link>
-    
+    <button>Home</button> 
+    </Link>    
    
     </main>
 

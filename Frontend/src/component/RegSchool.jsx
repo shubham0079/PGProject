@@ -4,38 +4,67 @@ import axios from 'axios'
 import { useNavigate } from "react-router-dom";
 import './test.css';
 import Footer from './footer';
+import Header from "./header";
 
 const RegSchool = () => {
-    const [states,setStates ] = useState()
-    const [fullName,setFullName ] = useState()
-    const [mobileNumber,setMobileNumber ] = useState()
-    const [emergencyNo,setEmergencyNo ] = useState()
-    const [gender,setGender ] = useState()
-    const [hospitalName,setHospitalName ] = useState()
-    const [regNo,setRegNo ] = useState()
-    const [specialzation,setSpecialzation ] = useState()
-    const [location,setLocation ] = useState()
-    const [city,setCity ] = useState()
-    const [pinCode,setPinCode ] = useState()
-    const [hospitalAddress,setHospitalAddress ] = useState()
-    const [nationality,setNationality ] = useState()
+  const [formData, setFormData] = useState({
+    state: '',
+    rtoname: '',
+    pincode: '',
+    firstName: '',
+    middleName: '',
+    lastName: '',
+    relation : '',
+    relationfirstName: '',
+    relationmiddleName: '',
+    relationlastName: '',
+    gender: '',
+    birthDate: '',
+    age: '',
+    mobno: '',
+    altmobno: '',
+    address: '',
+    dsname: ''
+    
+  });
 
-    const navigate = useNavigate()
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({ ...formData, [name]: value });
+  };
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        axios.post('http://localhost:3003/regdoctor',{states, mobileNumber, emergencyNo, gender, fullName, hospitalName, regNo, specialzation, location, city, pinCode, hospitalAddress, nationality})
-        .then(result => {console.log(result)
-        navigate('/finddoctor')
-        })
-        .catch(err=> console.log(err))
-    }
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    axios.post('http://localhost:3004/regschool', formData)
+      .then(response => {
+        console.log('Form submitted successfully:', response.data);
+        // Clear the form after successful submission
+        setFormData({
+          state: '',
+          rtoname: '',
+          pincode: '',
+         firstName: '',
+          middleName: '',
+          lastName: '',
+          relation : '',
+          relationfirstName: '',
+          relationmiddleName: '',
+          relationlastName: '',
+          gender: '',
+          birthDate: '',
+          age: '',
+          mobno: '',
+          altmobno: '',
+          address: '',
+          dsname: ''
+        });
+      })
+      .catch(error => console.error('Error submitting form:', error));
+  };
 
   return (
     <div id="body">
-    <header>
-        <h1>Parivahan Mitra</h1>
-    </header>
+    <Header></Header>
         <main>
       <h2>Driving School Online Application</h2>
       <form onSubmit={handleSubmit}>
@@ -43,19 +72,25 @@ const RegSchool = () => {
         <label>
           State:
           <input type="text" name="state" className="form-control rounded-0"
-                            onChange={(e) => setStates(e.target.value)} />
+                            value={formData.state}
+                            onChange={handleInputChange}
+                            required />
         </label>
 
         <label>
         RTO Name:
-          <input type="text" name="state" className="form-control rounded-0"
-                            onChange={(e) => setStates(e.target.value)} />
+          <input type="text" name="rtoname" className="form-control rounded-0"
+                            value={formData.rtoname}
+                            onChange={handleInputChange}
+                            required  />
         </label>
 
         <label>
         Pin Code:
-          <input type="number" name="state" className="form-control rounded-0"
-                            onChange={(e) => setStates(e.target.value)} />
+          <input type="number" name="pincode" className="form-control rounded-0"
+                            value={formData.pincode}
+                            onChange={handleInputChange}
+                            required />
         </label>
 
         <p>Is the Owner Having Driving License Number?</p>
@@ -65,17 +100,25 @@ const RegSchool = () => {
         <label>
         Owner Name:
           <input type="text" name="firstName" className="form-control rounded-0"
-                            onChange={(e) => setFullName(e.target.value)} />
+                            value={formData.firstName}
+                            onChange={handleInputChange}
+                            required />
             <input type="text" name="middleName" className="form-control rounded-0"
-                            onChange={(e) => setFullName(e.target.value)} />
-            <input type="text" name="LastName" className="form-control rounded-0"
-                            onChange={(e) => setFullName(e.target.value)} />                
-        </label>
+                            value={formData.middleName}
+                            onChange={handleInputChange}
+                            required />
+            <input type="text" name="lastName" className="form-control rounded-0"
+                            value={formData.lastName}
+                            onChange={handleInputChange}
+                            required />                
+        </label><br />
 
         <label>
         Relation ::
           <select name="relation" className="form-control rounded-0"
-                            onChange={(e) => setGender(e.target.value)} >
+                            value={formData.relation}
+                            onChange={handleInputChange}
+                            required >
             <option value="">Select</option>
             <option value="male">Father</option>
             <option value="female">Mother</option>
@@ -87,18 +130,26 @@ const RegSchool = () => {
 
         <label>
         Relation Name:
-          <input type="text" name="firstName" className="form-control rounded-0"
-                            onChange={(e) => setFullName(e.target.value)} />
-            <input type="text" name="middleName" className="form-control rounded-0"
-                            onChange={(e) => setFullName(e.target.value)} />
-            <input type="text" name="LastName" className="form-control rounded-0"
-                            onChange={(e) => setFullName(e.target.value)} />                
+          <input type="text" name="relationfirstName" className="form-control rounded-0"
+                            value={formData.relationfirstName}
+                            onChange={handleInputChange}
+                            required />
+            <input type="text" name="relationmiddleName" className="form-control rounded-0"
+                            value={formData.relationmiddleName}
+                            onChange={handleInputChange}
+                            required />
+            <input type="text" name="relationlastName" className="form-control rounded-0"
+                            value={formData.relationlastName}
+                            onChange={handleInputChange}
+                            required />                
         </label>
 
         <label>
           Gender:
           <select name="gender" className="form-control rounded-0"
-                            onChange={(e) => setGender(e.target.value)} >
+                            value={formData.gender}
+                            onChange={handleInputChange}
+                            required  >
             <option value="">Select</option>
             <option value="male">Male</option>
             <option value="female">Female</option>
@@ -109,36 +160,48 @@ const RegSchool = () => {
         <label>
           Birth Date:
           <input type="date" name="birthDate" className="form-control rounded-0"
-                            onChange={(e) => setBirthDate(e.target.value)} />
+                            value={formData.birthDate}
+                            onChange={handleInputChange}
+                            required  />
         </label>
 
         <label>
           Age:
-          <input type="text" name="mobileNumber" className="form-control rounded-0"
-                            onChange={(e) => setMobileNumber(e.target.value)} />
+          <input type="text" name="age" className="form-control rounded-0"
+                            value={formData.age}
+                            onChange={handleInputChange}
+                            required  />
         </label>
         <label>
           Mobile Number:
-          <input type="text" name="emergencyNo" className="form-control rounded-0"
-                            onChange={(e) => setEmergencyNo(e.target.value)} />
+          <input type="text" name="mobno" className="form-control rounded-0"
+                            value={formData.mobno}
+                            onChange={handleInputChange}
+                            required />
         </label>
 
         <label>
           Alt. Mobile Number:
-          <input type="text" name="emergencyNo" className="form-control rounded-0"
-                            onChange={(e) => setEmergencyNo(e.target.value)} />
+          <input type="text" name="altmobno" className="form-control rounded-0"
+                            value={formData.altmobno}
+                            onChange={handleInputChange}
+                            required />
         </label>
 
         <label>
-        School Address:
-          <textarea name="hospitalAddress" className="form-control rounded-0"
-                            onChange={(e) => setHospitalAddress(e.target.value)} />
+        Driving School Address:
+          <textarea name="address" className="form-control rounded-0"
+                            value={formData.address}
+                            onChange={handleInputChange}
+                            required />
         </label>
 
         <label>
         Driving School Name :
-          <textarea name="hospitalAddress" className="form-control rounded-0"
-                            onChange={(e) => setHospitalAddress(e.target.value)} />
+          <textarea name="dsname" className="form-control rounded-0"
+                            value={formData.dsname}
+                            onChange={handleInputChange}
+                            required />
         </label>
         
 

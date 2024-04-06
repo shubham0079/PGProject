@@ -4,6 +4,7 @@ import axios from 'axios'
 import { useNavigate } from "react-router-dom";
 import './test.css';
 import Footer from './footer';
+import Header from "./header";
 
 const Info = () => {
     const [states,setStates ] = useState()
@@ -18,14 +19,19 @@ const Info = () => {
     const [gender,setGender ] = useState()
     const [birthDate,setBirthDate ] = useState()
     const [birthPlace,setBirthPlace ] = useState()
-    const [currentAddress,setCurrentAddress ] = useState()
-    const [permanentAddress,setPermanentAddress ] = useState()
+    const [village,setVillage ] = useState()
+    const [address,setAddress ] = useState()
+    const [aadharNumber,setAadharNumber ] = useState()
+    const [qualification,setQualification ] = useState()
+    const [bloodGroup,setBloodGroup ] = useState()
+    const [duration,setDuration ] = useState()
+
     
     const navigate = useNavigate()
 
     const [formData, setFormData] = useState({
       
-      gender: '', // For radio buttons
+       // For radio buttons
       interests: [] // For checkboxes
     });
 
@@ -45,11 +51,10 @@ const Info = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.post('http://localhost:3002/info',{states, district, subdistrict, rtoOffice, firstName, middleName, lastName, mobileNumber, emergencyNo, gender, birthDate, birthPlace, currentAddress, permanentAddress, formData})
+        axios.post('http://localhost:3002/info',{states, duration, bloodGroup, qualification, aadharNumber, district, subdistrict, rtoOffice, firstName, middleName, lastName, mobileNumber, emergencyNo, gender, birthDate, birthPlace, village, address, formData})
         .then(result => {console.log(result)
         navigate('/acknowledgement')
         setFormData({
-          gender: '',
           interests: []
         });
         })
@@ -58,9 +63,7 @@ const Info = () => {
 
   return (
     <div id="body">
-    <header>
-        <h1>Parivahan Mitra</h1>
-    </header>
+    <Header></Header>
         <main>
       <h2>Learning License Registration Form</h2>
       <form onSubmit={handleSubmit}>
@@ -68,19 +71,19 @@ const Info = () => {
         <label>
           State:
           <input type="text" name="state" className="form-control rounded-0"
-                            onChange={(e) => setStates(e.target.value)} />
+                            onChange={(e) => setStates(e.target.value)} required/>
         </label>
 
         <label>
           RTO Office:
           <input type="text" name="rtoOffice" className="form-control rounded-0"
-                            onChange={(e) => setRtoOffice(e.target.value)} />
+                            onChange={(e) => setRtoOffice(e.target.value)} required/>
         </label>
 
         <label>
           Pin Code:
           <input type="text" name="pinCode" className="form-control rounded-0"
-                            onChange={(e) => setPinCode(e.target.value)} />
+                            onChange={(e) => setPinCode(e.target.value)} required/>
         </label>
 
     <p>Personal Details</p>
@@ -104,13 +107,13 @@ const Info = () => {
         <label>
           Aadhar Number:
           <input type="text" name="aadharNumber" className="form-control rounded-0"
-                            onChange={(e) => setMobileNumber(e.target.value)} />
+                            onChange={(e) => setAadharNumber(e.target.value)} required/>
         </label>
 
         <label>
           Gender:
           <select name="gender" className="form-control rounded-0"
-                            onChange={(e) => setGender(e.target.value)} >
+                            onChange={(e) => setGender(e.target.value)} required>
             <option value="">Select</option>
             <option value="male">Male</option>
             <option value="female">Female</option>
@@ -121,7 +124,7 @@ const Info = () => {
         <label>
           Birth Date:
           <input type="date" name="birthDate" className="form-control rounded-0"
-                            onChange={(e) => setBirthDate(e.target.value)} />
+                            onChange={(e) => setBirthDate(e.target.value)} required/>
         </label>
 
         <label>
@@ -131,9 +134,9 @@ const Info = () => {
         </label>
 
         <label>
-          Qualidication:
-          <select name="qualidication" className="form-control rounded-0"
-                            onChange={(e) => setGender(e.target.value)} >
+          Qualification:
+          <select name="qualification" className="form-control rounded-0"
+                            onChange={(e) => setQualification(e.target.value)} >
             <option value="">Select</option>
             <option value="8th Passed">8th Passed</option>
             <option value="10+2 or Equivalent">10+2 or Equivalent</option>
@@ -178,7 +181,7 @@ const Info = () => {
         <label>
         Blood Group:
           <select name="bloodGroup" className="form-control rounded-0"
-                            onChange={(e) => setGender(e.target.value)} >
+                            onChange={(e) => setBloodGroup(e.target.value)} >
         <option value="">Select</option>
         <option value="A+">A+</option>
         <option value="A-">A-</option>
@@ -224,13 +227,13 @@ const Info = () => {
 
         <label>
         Village:
-          <textarea name="Village" className="form-control rounded-0"
-                            onChange={(e) => setCurrentAddress(e.target.value)} />
+          <textarea name="village" className="form-control rounded-0"
+                            onChange={(e) => setVillage(e.target.value)} />
         </label>
         <label>
           Address:
-          <textarea name="Address" className="form-control rounded-0"
-                            onChange={(e) => setPermanentAddress(e.target.value)} />
+          <textarea name="address" className="form-control rounded-0"
+                            onChange={(e) => setAddress(e.target.value)} />
         </label>
 
         <label>
@@ -242,7 +245,7 @@ const Info = () => {
         <label>
           Duration of Stay at present Address 
           <input type="text" name="duration" className="form-control rounded-0"
-                            onChange={(e) => setPinCode(e.target.value)} />
+                            onChange={(e) => setDuration(e.target.value)} />
         </label><br />
 
         <div>
@@ -253,7 +256,7 @@ const Info = () => {
               name="MCWOG"
               checked={formData.interests.includes('MCWOG')}
               onChange={handleCheckboxChange}
-            />
+              required/>
             MCWOG M.C W/o Gear
           </label><br />
           <label>

@@ -2,14 +2,12 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import './test.css';
 import Footer from './footer';
+import Header from './header';
 
 const Instruction = () => {
   return (
     <div id="body">
-<header>
-        <h1>Parivahan Mitra</h1>
-
-    </header>
+      <Header></Header>
     <main>
     <section class="content">
     <h2>Instructions for Application Submission</h2>
@@ -23,14 +21,13 @@ const Instruction = () => {
     <p>7.  LL SLOT BOOK</p>
     <h2>NOTE : Please go through the Road Safety tutorial before proceeding for online Learners Licence test.</h2>
       </section>
-    <Link to="/Category" >
-    Continue
-    </Link>
-
-    <Link to="/home"  >
-    Home
-    </Link>
     
+    <Link to="/Category">
+    <button>Continue</button>    </Link>
+    
+    <Link to="/home"  >
+    <button>Home</button> 
+    </Link>    
    
     </main>
 

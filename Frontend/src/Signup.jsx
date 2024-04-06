@@ -19,9 +19,16 @@ function Signup() {
     }
 
 return (
-    <div className="d-flex justify-content-center align-items-center bg-secondary vh-100">
+    <div className="d-flex justify-content-center align-items-center bg-secondary vh-100" 
+    style={{
+        backgroundImage: `url('/public/photo/pexels-jean-depocas-6420047.jpg')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        width: '100%',
+        height: '100vh', // Adjust as needed
+      }}>
         <div className="bg-white p-3 rounded w-25">
-            <h2>Register</h2>
+            <h2><b>Register</b></h2>
                 <form onSubmit={handleSubmit}>
                     <div className="mb-3">
                         <label htmlFor="email">

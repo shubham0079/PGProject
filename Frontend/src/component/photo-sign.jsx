@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import Footer from './footer';
 import { Link } from "react-router-dom";
+import Header from './header';
 
 function PhotoSign() {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -29,10 +30,7 @@ function PhotoSign() {
 
   return (
         <div id="body">
-<header>
-        <h1>Parivahan Mitra</h1>
-
-    </header>
+          <Header></Header>
     <main>
       <h2>Upload Photo</h2>
       <input type="file" onChange={handleFileChange} />
@@ -43,7 +41,7 @@ function PhotoSign() {
       <button onClick={handleSubmit}>Upload</button><br />
 
       <Link to="/docupload"  >
-    Next
+    <button>Next</button>
     </Link>
 
       </main>

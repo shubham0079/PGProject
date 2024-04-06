@@ -2,36 +2,32 @@ import React from 'react';
 import Footer from './footer';
 import { Link } from "react-router-dom";
 import Navbar from './navigationbar';
+import Header from './header';
 // import './home.css';
 
 const DL = () => {
   return (
     <div>
-<header>
-        <h1>Parivahan Mitra</h1>
-
-    </header>
+<Header></Header>
 <Navbar></Navbar>
     <main>
-    <Link to="/instruction" className="btn btn-default border w-100 bg-light rounded-0 text-decoration-none">
-        Application For new LL
+    <Link to="/instructiondl" className="btn btn-default border w-100 bg-light rounded-0 text-decoration-none">
+        Application For new DL
+    </Link>
+
+    {/* <Link to="/Login" className="btn btn-default border w-100 bg-light rounded-0 text-decoration-none"> */}
+        {/* Application Print */}
+    {/* </Link> */}
+
+    <Link to="/tutorialdl" className="btn btn-default border w-100 bg-light rounded-0 text-decoration-none">
+        Tutorial for DL Test
     </Link>
 
     <Link to="/Login" className="btn btn-default border w-100 bg-light rounded-0 text-decoration-none">
-        Application Print
-    </Link>
+        Print DL (Form 3)
+    </Link><br /><br />
 
-    <Link to="/tutorialll" className="btn btn-default border w-100 bg-light rounded-0 text-decoration-none">
-        Tutorial for LL Test
-    </Link>
-
-    <Link to="/samplequestion" className="btn btn-default border w-100 bg-light rounded-0 text-decoration-none">
-        Sample questin for LL Test
-    </Link>
-
-    <Link to="/Login" className="btn btn-default border w-100 bg-light rounded-0 text-decoration-none">
-        Print LL (Form 3)
-    </Link>
+    <img className='llimg' src="/photo/image-296.png" alt="Image Description" />
     </main>
 
     <footer>

@@ -2,18 +2,16 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import './test.css';
 import Footer from './footer';
+import Header from './header';
 
 
 const Rsc = () => {
   return (
     <div id="body">
-<header>
-        <h1>Parivahan Mitra</h1>
-
-    </header>
+      <Header></Header>
     <main>
     <section class="content">
-    
+    <h2>Road Safety Content</h2>
       </section>
     <Link to="/rsc1" >
     Training manual for drivers
@@ -33,12 +31,11 @@ const Rsc = () => {
 
     <Link to="/rsvideo1"  >
     Road Safety video
-    </Link><br />
+    </Link><br /><br /><br />
     
     <Link to="/home"  >
-    Home
-    </Link>
-   
+    <button>Home</button> 
+    </Link>   
     </main>
 
     <footer>

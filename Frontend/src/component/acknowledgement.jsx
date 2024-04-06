@@ -2,14 +2,12 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import './test.css';
 import Footer from './footer';
+import Header from './header';
 
 const Acknowledgement = () => {
   return (
     <div id="body">
-<header>
-        <h1>Parivahan Mitra</h1>
-
-    </header>
+<Header></Header>
     <main>
     <section class="content">
     <h2>Acknowledgement</h2>
@@ -24,7 +22,7 @@ const Acknowledgement = () => {
       </section>
 
       <Link to="/photosign"  >
-    Next
+      <button>Next</button>
     </Link>
     
    

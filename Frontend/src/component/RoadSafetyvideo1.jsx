@@ -2,14 +2,12 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import './test.css';
 import Footer from './footer';
+import Header from './header';
 
 const RoadSafetyvideo1 = () => {
   return (
     <div id="body">
-        <header>
-        <h1>Parivahan Mitra</h1>
-
-    </header>
+    <Header></Header>
     <main>
     <section class="content">    
       </section>
@@ -19,9 +17,8 @@ const RoadSafetyvideo1 = () => {
         Your browser does not support the video tag.
       </video>
       <Link to="/home"  >
-    Home
-    </Link>
-    
+    <button>Home</button> 
+    </Link>    
    
     </main>
 

@@ -2,14 +2,12 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import './test.css';
 import Footer from './footer';
+import Header from './header';
 
 const DashBoard = () => {
   return (
     <div id="body">
-<header>
-        <h1>Parivahan Mitra</h1>
-
-    </header>
+<Header></Header>
     <main>
     <section class="content">
     <h2>Dashboard</h2>
@@ -20,9 +18,8 @@ const DashBoard = () => {
       </section>
 
     <Link to="/home"  >
-    Home
-    </Link>
-    
+    <button>Home</button> 
+    </Link>    
    
     </main>
 

@@ -6,10 +6,7 @@ import Footer from './footer';
 const Marathi = () => {
   return (
     <div id="body">
-<header>
-        <h1>Parivahan Mitra</h1>
-
-    </header>
+      <Header></Header>
     <main>
     <section class="content">
     <h2> Learner Licence Test Marathi</h2>
@@ -18,9 +15,8 @@ const Marathi = () => {
       <iframe src="/pdf/marathi.pdf" width="100%" height="600px" />
 
     <Link to="/home"  >
-    Home
-    </Link>
-    
+    <button>Home</button> 
+    </Link>    
    
     </main>
 

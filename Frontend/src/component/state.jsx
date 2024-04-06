@@ -23,12 +23,12 @@ const State = () => {
   return (
     <div id="body">
    <Header></Header>
-        <main>
-        <img className='i1' src="/photo/bannerpic.jpg" alt="Image Description" />
+        <main className='state'>
+        <img className='i1' src="/photo/bannerpic.jpg" alt="Image Description" /><br /><br /><br />
         <p>Online services in this portal are available only for the States listed below</p>
           <p>Please select the State from where the service is to be taken</p>
 
-      <label htmlFor="state" className="form-label">Select a State:</label>
+      <label htmlFor="state" className="form-label"><b>Select a State:</b></label>
       <select id="state" className="form-select" value={selectedState} onChange={handleStateChange}>
         <option value="">Select...</option>
         {indianStates.map((state, index) => (
@@ -39,8 +39,8 @@ const State = () => {
       </select>
           
       <p className="mt-3">Selected State: {selectedState}</p>
-      <Link to="/home" className="btn btn-default border w-100 bg-light rounded-0 text-decoration-none">
-      Continue
+      <Link to="/home">
+      <button>Continue</button>
     </Link>
     </main>
 

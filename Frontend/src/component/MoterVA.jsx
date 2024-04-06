@@ -2,17 +2,15 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import './test.css';
 import Footer from './footer';
+import Header from './header';
 
 const MotorVehiclesAct = () => {
   return (
     <div id="body">
-<header>
-        <h1>Parivahan Mitra</h1>
-
-    </header>
+      <Header></Header>
     <main>
     <section class="content">
-    
+    <h2>MOTOR VEHICLES ACT</h2>
       </section>
     <Link to="/mva1" >
     THE MOTOR VEHICLES ACT, 1988
@@ -24,12 +22,11 @@ const MotorVehiclesAct = () => {
 
     <Link to="/mva3" >
     ACT, 2019
-    </Link><br />
+    </Link><br /><br />
 
     <Link to="/home"  >
-    Home
-    </Link>
-    
+    <button>Home</button> 
+    </Link>    
    
     </main>
 

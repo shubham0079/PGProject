@@ -4,6 +4,7 @@ import axios from 'axios'
 import { useNavigate } from "react-router-dom";
 import './test.css';
 import Footer from './footer';
+import Header from "./header";
 
 const RegDoctor = () => {
     const [states,setStates ] = useState()
@@ -33,9 +34,7 @@ const RegDoctor = () => {
 
   return (
     <div id="body">
-    <header>
-        <h1>Parivahan Mitra</h1>
-    </header>
+      <Header></Header>
         <main>
       <h2>Register Docter</h2>
       <form onSubmit={handleSubmit}>

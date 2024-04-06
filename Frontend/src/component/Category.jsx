@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import './test.css';
 import Footer from './footer';
+import Header from './header';
 
 const Category = () => {
     const [selectedState, setSelectedState] = useState('');
@@ -16,14 +17,11 @@ const Category = () => {
     ];
   return (
     <div id="body">
-<header>
-        <h1>Parivahan Mitra</h1>
-
-    </header>
+<Header></Header>
     <main>
     <section class="content">
     <label htmlFor="state" className="form-label">Select Category :</label>
-      <select id="state" className="form-select" value={selectedState} onChange={handleStateChange}>
+      <select id="state" className="form-select" value={selectedState} onChange={handleStateChange} >
         <option value="">Select...</option>
         {indianStates.map((state, index) => (
           <option key={index} value={state}>
@@ -34,8 +32,8 @@ const Category = () => {
 
       <p className="mt-3">Selected Category : {selectedState}</p>
       </section>
-      <Link to="/info" className="btn btn-default border w-100 bg-light rounded-0 text-decoration-none">
-      Continue
+      <Link to="/info" >
+      <button>Continue</button>
     </Link>
     </main>
 

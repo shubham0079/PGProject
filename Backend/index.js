@@ -1,12 +1,14 @@
 const express = require("express")
 const mongoose = require("mongoose")
 const cors = require("cors")
+const multer = require('multer')
 const UserModel =require("./models/Users")
 const InfoModel =require("./models/info")
 
-const moment = require('moment');
 const RegModel = require("./models/regdoctor")
 const Checkbox = require("./models/saveCheckbox")
+const FeedbackModel = require("./models/feedback")
+const RegschoolModel = require("./models/regschool")
 
 const app = express()
 app.use(express.json())
@@ -53,7 +55,7 @@ app.listen(3002,() =>{
 })
 
 app.post('/regdoctor',(req, res) =>{
-    RegModel.create(req.body)
+    Doctor.create(req.body)
     .then(regdoctors => res.json(regdoctors))
     .catch(err => res.json(err))
 
@@ -74,4 +76,42 @@ app.post('/saveCheckbox',(req, res) =>{
   app.listen(3000, () => {
     console.log(`Server is running on port `);
   });
+
+  app.post('/regschool',(req, res) =>{
+    RegschoolModel.create(req.body)
+    .then( regschools => res.json(regschools))
+    .catch(err => res.json(err))
+
+})
+
+  app.listen(3004, () => {
+    console.log(`Server is running on port `);
+  });
+
+  app.post('/feedback',(req, res) =>{
+    FeedbackModel.create(req.body)
+    .then( feedback=> res.json(feedback))
+    .catch(err => res.json(err))
+
+})
+
+  app.listen(3005, () => {
+    console.log(`Server is running on port `);
+  });
   
+  
+  app.get('/regdoctors/:city', async (req, res) => {
+    const city = req.params.city;
+    try {
+      const doctors = await Doctor.find({ city });
+      res.json(doctors);
+    } catch (error) {
+      res.status(500).json({ error: 'Internal server error' });
+    }
+  });
+  
+  // Start the server
+  const PORT = process.env.PORT || 5000;
+  app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+  });
