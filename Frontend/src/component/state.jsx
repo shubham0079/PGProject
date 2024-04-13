@@ -28,8 +28,8 @@ const State = () => {
         <p>Online services in this portal are available only for the States listed below</p>
           <p>Please select the State from where the service is to be taken</p>
 
-      <label htmlFor="state" className="form-label"><b>Select a State:</b></label>
-      <select id="state" className="form-select" value={selectedState} onChange={handleStateChange}>
+      <label htmlFor="state" className=""><b>Select a State:</b></label>
+      <select id="state" className="" value={selectedState} onChange={handleStateChange}>
         <option value="">Select...</option>
         {indianStates.map((state, index) => (
           <option key={index} value={state}>

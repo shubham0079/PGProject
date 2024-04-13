@@ -15,8 +15,8 @@ const LL = () => {
         Application For new LL
     </Link>
 
-    <Link to="/Login" className="btn btn-default border w-100 bg-light rounded-0 text-decoration-none">
-        Application Print
+    <Link to="/quiz" className="btn btn-default border w-100 bg-light rounded-0 text-decoration-none">
+        LL Test
     </Link>
 
     <Link to="/tutorialll" className="btn btn-default border w-100 bg-light rounded-0 text-decoration-none">

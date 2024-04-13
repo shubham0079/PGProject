@@ -53,7 +53,7 @@ const Info = () => {
         e.preventDefault()
         axios.post('http://localhost:3002/info',{states, duration, bloodGroup, qualification, aadharNumber, district, subdistrict, rtoOffice, firstName, middleName, lastName, mobileNumber, emergencyNo, gender, birthDate, birthPlace, village, address, formData})
         .then(result => {console.log(result)
-        navigate('/acknowledgement')
+        navigate('/photosign')
         setFormData({
           interests: []
         });
@@ -67,6 +67,7 @@ const Info = () => {
         <main>
       <h2>Learning License Registration Form</h2>
       <form onSubmit={handleSubmit}>
+      <div className="form-group">
     <p>Select RTO Office</p>
         <label>
           State:
@@ -85,7 +86,9 @@ const Info = () => {
           <input type="text" name="pinCode" className="form-control rounded-0"
                             onChange={(e) => setPinCode(e.target.value)} required/>
         </label>
+        </div>
 
+        <div className="form-group">
     <p>Personal Details</p>
         <p>Name of Applicant</p>
         <label>
@@ -204,7 +207,8 @@ const Info = () => {
           <input type="text" name="emergencyNo" className="form-control rounded-0"
                             onChange={(e) => setEmergencyNo(e.target.value)} />
         </label>
-
+        </div>
+        <div className="form-group">
       <p>Address</p>
 
       <label>
@@ -247,7 +251,7 @@ const Info = () => {
           <input type="text" name="duration" className="form-control rounded-0"
                             onChange={(e) => setDuration(e.target.value)} />
         </label><br />
-
+        </div>
         <div>
           <label>Select Class of Vehicle</label><br />
           <label>
@@ -256,7 +260,7 @@ const Info = () => {
               name="MCWOG"
               checked={formData.interests.includes('MCWOG')}
               onChange={handleCheckboxChange}
-              required/>
+              />
             MCWOG M.C W/o Gear
           </label><br />
           <label>

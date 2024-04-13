@@ -7,21 +7,29 @@ function Signup() {
     const [name,setName ] = useState()
     const [phone,setPhone ] = useState()
     const [password,setPassword ] = useState()
+    const [userType, setUserType] = useState("");
+    const [secretKey, setSecretKey] = useState("");
     const navigate = useNavigate()
 
     const handleSubmit = (e) => {
-        e.preventDefault()
-        axios.post('http://localhost:3001/register',{name, phone, password})
+        if (userType == "Admin" && secretKey != "RTO@4460") {
+            e.preventDefault();
+            alert("Invalid Admin");
+          } else {
+            e.preventDefault();
+
+        axios.post('http://localhost:3001/register',{name, phone, password, userType})
         .then(result => {console.log(result)
         navigate('/Login')
         })
         .catch(err=> console.log(err))
+        }
     }
 
 return (
     <div className="d-flex justify-content-center align-items-center bg-secondary vh-100" 
     style={{
-        backgroundImage: `url('/public/photo/pexels-jean-depocas-6420047.jpg')`,
+        backgroundImage: `url('/photo/pexels-jean-depocas-6420047.jpg')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         width: '100%',
@@ -30,6 +38,35 @@ return (
         <div className="bg-white p-3 rounded w-25">
             <h2><b>Register</b></h2>
                 <form onSubmit={handleSubmit}>
+                <div>
+            Register As
+            <input
+              type="radio"
+              name="UserType"
+              value="User"
+              onChange={(e) => setUserType(e.target.value)}
+            />
+            User
+            <input
+              type="radio"
+              name="UserType"
+              value="Admin"
+              onChange={(e) => setUserType(e.target.value)}
+            />
+            Admin
+          </div>
+
+          {userType == "Admin" ? (
+            <div className="mb-3">
+              <label>Secret Key</label>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Secret Key"
+                onChange={(e) => setSecretKey(e.target.value)}
+              />
+            </div>
+          ) : null}
                     <div className="mb-3">
                         <label htmlFor="email">
                             <strong>Name</strong>
@@ -40,7 +77,7 @@ return (
                             name="email"
                             className="form-control rounded-0"
                             onChange={(e) => setName(e.target.value)}
-                        />
+                        required/>
                     </div>
 
                     <div className="mb-3">
@@ -53,7 +90,7 @@ return (
                             name="phone"
                             className="form-control rounded-0"
                             onChange={(e) => setPhone(e.target.value)}
-                        />
+                            required/>
                     </div>
 
                     <div className="mb-3">
@@ -62,10 +99,10 @@ return (
                         </label>
                         <input type="password"
                             placeholder="Enter Your Password"
-name="password"
-className="form-control rounded-0"
-onChange={(e) => setPassword(e.target.value)}
-/>
+                            name="password"
+                            className="form-control rounded-0"
+                            onChange={(e) => setPassword(e.target.value)}
+                            required />
 </div>
 <button type="submit" className="btn btn-success w-100 rounded-0">
 

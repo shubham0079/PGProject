@@ -9,6 +9,7 @@ const RegModel = require("./models/regdoctor")
 const Checkbox = require("./models/saveCheckbox")
 const FeedbackModel = require("./models/feedback")
 const RegschoolModel = require("./models/regschool")
+const SlotLLModel = require("./models/slot")
 
 const app = express()
 app.use(express.json())
@@ -98,20 +99,34 @@ app.post('/saveCheckbox',(req, res) =>{
   app.listen(3005, () => {
     console.log(`Server is running on port `);
   });
-  
-  
-  app.get('/regdoctors/:city', async (req, res) => {
-    const city = req.params.city;
-    try {
-      const doctors = await Doctor.find({ city });
-      res.json(doctors);
-    } catch (error) {
-      res.status(500).json({ error: 'Internal server error' });
+
+app.post('/slot',(req, res) =>{
+    SlotLLModel.create(req.body)
+    .then(slotll => res.json(slotll))
+    .catch(err => res.json(err))
+
+})
+
+app.listen(3006,() =>{
+    console.log("Server is running")
+})
+
+app.get("/getAllUser", async (req, res) => {
+    let query = {};
+    const searchData = req.query.search;
+    if (searchData) {
+      query = {
+        $or: [
+          { name: { $regex: searchData, $options: "i" } },
+          { email: { $regex: searchData, $options: "i" } },
+        ],
+      };
     }
-  });
   
-  // Start the server
-  const PORT = process.env.PORT || 5000;
-  app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+    try {
+      const allUser =  useers.find(query);
+      res.send({ status: "ok", data: allUser });
+    } catch (error) {
+      console.log(error);
+    }
   });

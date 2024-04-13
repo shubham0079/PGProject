@@ -4,43 +4,81 @@ import axios from 'axios';
 import './test.css';
 import Footer from './footer';
 import Header from './header';
+import { Document, Page } from "react-pdf";
 
-function FindDoctor  () {
-  const [records, setRecords] = useState([])
-  useEffect(() => {
-      axios.get(`https://jsonplaceholder.typicode.com/users`)
-      .then(res => {setRecords(res.data)})
-      .catch(err => console.log(err))
-        
-  }, [])
+const FindDoctor = () => {
+  const [selectedOption, setSelectedOption] = useState("");
+
+  const handleOptionChange = (event) => {
+    setSelectedOption(event.target.value);
+  };
 
   return (
     <div id="body">
   <Header></Header>
     <main>
-    <div>
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Name</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          {records.map((r, i)=> {
-            <tr key={i}>
-              <td>{r.id}</td>
-              <td>{r.name}</td>
-
-            </tr>
-          })}
-        </tbody>
-      </table>
-    </div>
     <section class="content">
-    <h2>Doctor</h2>
+    <h2><b>Doctor</b></h2>
     </section>
+    <div>
+      <label htmlFor="">Find your Doctor by RTO wise     .</label>
+      <select value={selectedOption} onChange={handleOptionChange}>
+        <option value="">Select RTO</option>
+        <option value="MH42 - DY.RTO,BARAMATI.pdf">MH42 - DY.RTO,BARAMATI</option>
+        <option value="MH16 - DY.RTO,AHMEDNAGAR.pdf">MH16 - DY.RTO,AHMEDNAGAR</option>
+        <option value="MH45 - DY.RTO,AKLUJ.pdf">MH45 - DY.RTO,AKLUJ</option>
+        <option value="MH30 - DY.RTO,AKOLA.pdf"> MH30 - DY.RTO,AKOLA</option>
+        <option value=".pdf"> </option>
+        <option value=".pdf"> </option>
+        <option value=".pdf"> </option>
+        <option value=".pdf"> </option>
+        <option value=".pdf"> </option>
+        <option value=".pdf"> </option>
+        <option value=".pdf"> </option>
+        <option value=".pdf"> </option>
+        <option value=".pdf"> </option>
+        <option value=".pdf"> </option>
+        <option value=".pdf"> </option>
+        <option value=".pdf"> </option>
+        <option value=".pdf"> </option>
+        <option value=".pdf"> </option>
+        <option value=".pdf"> </option>
+        <option value=".pdf"> </option>
+        <option value=".pdf"> </option>
+        <option value=".pdf"> </option>
+        <option value=".pdf"> </option>
+        <option value=".pdf"> </option>
+        <option value=".pdf"> </option>
+        <option value=".pdf"> </option>
+        <option value=".pdf"> </option>
+        <option value=".pdf"> </option>
+        <option value=".pdf"> </option>
+        <option value=".pdf"> </option>
+        <option value=".pdf"> </option>
+        <option value=".pdf"> </option>
+        <option value=".pdf"> </option>
+        <option value=".pdf"> </option>
+        <option value=".pdf"> </option>
+        <option value=".pdf"> </option>
+        <option value=".pdf"> </option>
+        <option value=".pdf"> </option>
+        <option value=".pdf"> </option>
+        <option value=".pdf"> </option>
+        <option value=".pdf"> </option>
+        <option value=".pdf"> </option>
+        <option value=".pdf"> </option>
+        <option value=".pdf"> </option>
+        <option value=".pdf"> </option>
+      </select>
+      {selectedOption && (
+        <iframe
+          title="PDF Viewer"
+          src={`/pdf/${selectedOption}`}
+          width="100%"
+          height="600"
+        ></iframe>
+      )}
+    </div><section><br /><br /></section>
     <Link to="/regdoctor" >
    <button>Registor</button>    </Link>
 
@@ -54,7 +92,7 @@ function FindDoctor  () {
        <Footer></Footer>
     </footer>
     </div>
-  )
-}
+  );
+};
 
 export default FindDoctor;

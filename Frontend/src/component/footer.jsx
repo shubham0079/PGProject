@@ -19,6 +19,10 @@ const Footer = () => {
 
       <Link to="/feedback"  >
         <b>Feedback</b>     </Link>
+
+      <Link to="/dashboard"  >
+        <b>Dashboard</b>     </Link>
+
     </div>
   );
 };

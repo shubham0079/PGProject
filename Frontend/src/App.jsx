@@ -54,6 +54,10 @@ import DLDetails from './component/dldetails'
 import DLInfo from './component/dlInfo'
 import TutorialDL from './component/TutorialDL'
 import Quiz from './component/quiz'
+import LLTestSlot from './component/llTestSlot'
+import DLTestSlot from './component/dlTestSlot'
+import Content from './component/Contents'
+import AdminHome from './component/adminhome'
 
 
 
@@ -116,7 +120,10 @@ function App() {
       <Route path='/dlinfo' element={<DLInfo></DLInfo>}></Route>
       <Route path='/tutorialdl' element={<TutorialDL></TutorialDL>}></Route>
       <Route path='/quiz' element={<Quiz></Quiz>}></Route>
-      
+      <Route path='/llTestSlot' element={<LLTestSlot></LLTestSlot>}></Route>
+      <Route path='/dlTestSlot' element={<DLTestSlot></DLTestSlot>}></Route>
+      <Route path='/adminhome' element={<AdminHome></AdminHome>}></Route> 
+      <Route path='/Contents' element={<Content></Content>}></Route>
 
 
     </Routes>

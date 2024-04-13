@@ -44,7 +44,7 @@ function FileUpload() {
       <input type="file" onChange={handleFileChange} />
       <button onClick={handleSubmit}>Upload</button><br />
       
-      <Link to="/home"  >
+      <Link to="/llTestSlot"  >
       <button>Next</button>
     </Link>
     

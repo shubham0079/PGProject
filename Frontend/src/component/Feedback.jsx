@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Link } from "react-router-dom";
-import './test.css';
+import './feedback.css';
 import Footer from './footer';
 import Header from './header';
 
@@ -143,8 +143,7 @@ function Feedback() {
           />
         </div><br /><br />
         
-        <button type="submit">Submit</button>
-        <Link to="/home"  >
+        <button type="submit">Submit   </button>      <Link to="/home"  >
     <button>Home</button> 
     </Link> 
       </form>

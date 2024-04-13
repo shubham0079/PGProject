@@ -23,7 +23,7 @@ function Login() {
     return (
         <div className="d-flex justify-content-center align-items-center bg-secondary vh-100" 
         style={{
-            backgroundImage: `url('/public/photo/pexels-pixabay-210182.jpg')`,
+            backgroundImage: `url('/photo/pexels-pixabay-210182.jpg')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             width: '100%',
@@ -33,8 +33,8 @@ function Login() {
         <h2><b>Login</b></h2>
         
 
-        <form onSubmit={handleSubmit}>
-            <div className="mb-3">
+        <form onSubmit={handleSubmit} style={{backgroundColor:'transparent'}}>
+            <div className="mb-3" style={{backgroundColor:'transparent'}}>
 
             <label htmlFor="email">
             <strong>Phone No</strong>

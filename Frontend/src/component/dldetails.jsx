@@ -55,7 +55,7 @@ function DLDetails() {
         e.preventDefault()
         axios.post('http://localhost:3002/info',{states, duration, bloodGroup, qualification, aadharNumber, district, subdistrict, rtoOffice, firstName, middleName, lastName, mobileNumber, emergencyNo, gender, birthDate, birthPlace, village, address, formData})
         .then(result => {console.log(result)
-        navigate('/acknowledgement')
+        navigate('/dlTestSlot')
         setFormData({
           interests: []
         });

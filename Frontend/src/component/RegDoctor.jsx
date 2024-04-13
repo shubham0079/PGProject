@@ -129,7 +129,7 @@ const RegDoctor = () => {
             <option value="indian">Indian</option>
             <option value="other">Other</option>
           </select>
-        </label>
+        </label><br />
 
         <button type="submit">Save</button>
         <button type="reset">Reset</button>
